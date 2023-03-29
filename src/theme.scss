@@ -1,0 +1,25 @@
+$background-primary: #111236;
+$background-secondary: #181747;
+$font-active-color: #ffffff;
+$font-inactive-color: #526480;
+$neon-color: #01B4FF;
+
+html, body, #root {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI";
+	background-color: $background-secondary;
+	color: $font-active-color;
+}
+
+div {
+	position: relative;
+	box-sizing: border-box;
+}
+
+#application {
+	width: 100%;
+	height: 100%;
+}
