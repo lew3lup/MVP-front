@@ -1,0 +1,66 @@
+@use "../theme.scss" as theme;
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 350px;
+	width: calc(100% - 350px);
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+
+	#footer-left {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 20px;
+
+		#footer-left-title {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			gap: 10px;
+			align-items: center;
+			font-size: 25px;
+			font-weight: bold;
+		}
+
+		#footer-left-copyright {
+			color: theme.$font-inactive-color;
+		}
+
+		#footer-left-social {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			gap: 20px;
+
+			a {
+				img {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+
+	.footer-col {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 20px;
+		font-weight: bold;
+
+		.footer-col-title {
+			font-weight: normal;
+			color: theme.$font-inactive-color;
+		}
+
+		a {
+			text-decoration: none;
+			color: theme.$font-active-color;
+		}
+	}
+}
