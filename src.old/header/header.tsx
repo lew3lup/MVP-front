@@ -1,8 +1,6 @@
-import React from "react"
-import {useState} from "react"
-import Level from "../common/level"
+import { useState } from "react"
 import Ethereum from "../common/ethereum"
-import Coins from "../common/coins"
+import Level from "../common/level"
 
 import "./header.scss"
 
@@ -46,7 +44,7 @@ function Header (props: HeaderProps): JSX.Element {
 			<input id="header-search" type="text" value={state.searchString} onChange={(e) => {setState({searchString: e.target.value})}}/>
 		</div>
 		<Ethereum />
-		<Coins />
+		{/* <Coins /> */}
 		<Level minified={true} level={props.level} levelProgress={props.levelProgress} />
 		<Profile profileImage={props.profileImage} hash={props.hash} />
 	</div>

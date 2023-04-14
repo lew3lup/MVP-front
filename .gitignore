@@ -1,0 +1,6 @@
+.vscode
+.fttemplates
+node_modules
+# /src.old
+/resources
+/landing

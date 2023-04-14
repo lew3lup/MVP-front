@@ -1,0 +1,22 @@
+.root {
+  height: var(--header-height);
+  background: rgba(17, 18, 54, 0.25);
+  border-bottom: 1px solid rgba(1, 180, 255, 0.25);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 10%;
+}
+
+@media screen and (max-width: 500px) {
+  .innerContainer {
+    padding: 0 15px;
+    margin: 0;
+  }
+}

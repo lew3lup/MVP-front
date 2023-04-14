@@ -1,18 +1,20 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "jsx": "react",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
     "strict": true,
-    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
     "target": "esnext",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": { "*": ["./src/*"] },
+
+    "lib": ["dom", "esnext"],
+    "sourceMap": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "ts-node": { "compilerOptions": { "module": "CommonJS" } },
+  "exclude": ["node_modules"]
 }
