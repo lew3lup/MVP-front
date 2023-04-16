@@ -1,12 +1,14 @@
+import { AppRoutes, RoutePath } from "app/providers/router";
 import cn from "classnames";
+import { loginByGoogle } from "features/AuthByGoogle";
 import { Link } from "react-router-dom";
 import GoogleIcon from "shared/assets/icons/google-icon.svg";
 import MailIcon from "shared/assets/icons/mail-icon.svg";
 import MetamaskIcon from "shared/assets/icons/metamask-icon.svg";
 import Logo from "shared/assets/logo.svg";
+import { useAppDispatch } from "shared/hooks";
 import { Card, Icon, TextInput } from "shared/ui";
 import styles from "./SignUpPage.module.scss";
-import { AppRoutes, RoutePath } from "app/providers/router";
 
 export interface SignUpPageProps {
   className?: string;
@@ -14,6 +16,13 @@ export interface SignUpPageProps {
 
 const SignUpPage = (props: SignUpPageProps) => {
   const { className } = props;
+  const dispatch = useAppDispatch();
+
+  const signUpWithGoogle = async () => {
+    console.log("clicked");
+    await dispatch(loginByGoogle());
+    console.log("OK");
+  };
 
   return (
     <div className={cn(styles.root, className, {})}>
@@ -32,14 +41,12 @@ const SignUpPage = (props: SignUpPageProps) => {
           </TextInput>
         </Link>
         <div className={styles.divider}></div>
-        <Link className={styles.textInput} to={RoutePath[AppRoutes.GOOGLE]}>
-          <TextInput>
-            <Icon Svg={GoogleIcon} />
-            <div className={styles.textWrapper}>
-              <p className={styles.option}>Sign up with Google</p>
-            </div>
-          </TextInput>
-        </Link>
+        <TextInput onClick={signUpWithGoogle}>
+          <Icon Svg={GoogleIcon} />
+          <div className={styles.textWrapper}>
+            <p className={styles.option}>Sign up with Google</p>
+          </div>
+        </TextInput>
         <Link className={styles.textInput} to={RoutePath[AppRoutes.EMAIL]}>
           <TextInput>
             <Icon Svg={MailIcon} />

@@ -1,5 +1,5 @@
 import { Suspense, memo, useCallback } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { PageLoader } from "shared/ui";
 import { AppRouteProps, routeConfig } from "../config/routeConfig";
 
@@ -20,11 +20,7 @@ function AppRouter() {
     );
   }, []);
 
-  return (
-    <BrowserRouter>
-      <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>
-    </BrowserRouter>
-  );
+  return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 }
 
 export default memo(AppRouter);

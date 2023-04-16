@@ -7,7 +7,11 @@ export interface TextInputProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const TextInput = (props: TextInputProps) => {
-  const { className, children } = props;
+  const { className, children, ...otherProps } = props;
 
-  return <div className={cn(styles.root, className, {})}>{children}</div>;
+  return (
+    <div className={cn(styles.root, className, {})} {...otherProps}>
+      {children}
+    </div>
+  );
 };
