@@ -1,0 +1,46 @@
+:root {
+  // Headlines
+  --h1-font-size: 76px;
+  --h1-font-line: 102px;
+  --h1-font-weight: 700;
+  --h1: var(--h1-font-weight) var(--h1-font-size) / var(--h1-font-line) var(--font-family);
+
+  --h2-font-size: 28px;
+  --h2-font-line: 38px;
+  --h2-font-weight: 700;
+  --h2: var(--h2-font-weight) var(--h2-font-size) / var(--h2-font-line) var(--font-family);
+
+  // Text
+  --body-xl-font-size: 24px;
+  --body-xl-font-line: 32px;
+  --body-xl-font-weight: 700;
+  --body-xl: var(--body-xl-font-weight) var(--body-xl-font-size) / var(--body-xl-font-line)
+    var(--font-family);
+
+  --body-m-font-size: 16px;
+  --body-m-font-line: 22px;
+  --body-m: var(--body-m-font-size) / var(--body-m-font-line) var(--font-family);
+
+  --body-s-font-size: 14px;
+  --body-s-font-line: 20px;
+  --body-s: var(--body-s-font-size) / var(--body-s-font-line) var(--font-family);
+
+  // Other
+  --button-font-size: 15px;
+  --button-font-line: 20px;
+  --button-font-weight: 600;
+  --button: var(--button-font-weight) var(--button-font-size) / var(--button-font-line)
+    var(--font-family);
+
+  --input-font-size: 15px;
+  --input-font-line: 22px;
+  --input-font-weight: 400;
+  --input: var(--input-font-weight) var(--input-font-size) / var(--input-font-line)
+    var(--font-family);
+
+  --label-font-size: 12px;
+  --label-font-line: 16px;
+  --label-font-weight: 400;
+  --label: var(--label-font-weight) var(--label-font-size) / var(--label-font-line)
+    var(--font-family);
+}

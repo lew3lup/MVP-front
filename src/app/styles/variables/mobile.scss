@@ -1,0 +1,23 @@
+.app-mobile {
+  // Headlines
+  --h1-font-size: 38px;
+  --h1-font-line: 52px;
+  --h1-font-weight: 700;
+  --h1: var(--h1-font-weight) var(--h1-font-size) / var(--h1-font-line) var(--font-family);
+
+  --h2-font-size: 22px;
+  --h2-font-line: 32px;
+  --h2-font-weight: 700;
+  --h2: var(--h2-font-weight) var(--h2-font-size) / var(--h2-font-line) var(--font-family);
+
+  // Text
+  --body-xl-font-size: 20px;
+  --body-xl-font-line: 28px;
+  --body-xl-font-weight: 700;
+  --body-xl: var(--body-xl-font-weight) var(--body-xl-font-size) / var(--body-xl-font-line)
+    var(--font-family);
+
+  --body-s-font-size: 12px;
+  --body-s-font-line: 16px;
+  --body-s: var(--body-s-font-size) / var(--body-s-font-line) var(--font-family);
+}

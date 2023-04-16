@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.textInput {
+  width: 100%;
+}
+
+.option {
+  font-weight: 600;
+}
+
+.description {
+  font: var(--body-s);
+  color: var(--dark-gray-2);
+  text-overflow: ellipsis;
+}
+
+.divider {
+  border-bottom: 1px solid var(--dark-gray-4);
+  width: 100%;
+}
+
+.signInP {
+  font-weight: 600;
+}
+
+.signInLink {
+  color: var(--blue);
+}

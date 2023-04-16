@@ -1,0 +1,29 @@
+@import "./fonts";
+@import "./variables/global";
+@import "./variables/desktop.scss";
+@import "./variables/mobile.scss";
+@import "./reset";
+
+body {
+  font: var(--body-m);
+  color: var(--white);
+  background-color: var(--dark-blue);
+}
+
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .page-wrapper {
+    padding: 0 15px;
+  }
+}

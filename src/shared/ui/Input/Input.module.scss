@@ -1,0 +1,54 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  position: absolute;
+  font: var(--input);
+  line-height: var(--input-height);
+  color: var(--dark-gray-2);
+  left: 19px; // input padding-left + border
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.focus .label {
+  display: block;
+  padding: 3px 7px;
+  background-color: var(--dark-blue);
+  transform: translateY(-12px);
+  font: var(--label);
+  color: var(--white);
+}
+
+.input {
+  height: var(--input-height);
+  padding: 14px 18px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  background: var(--dark-blue);
+  border: 1px solid var(--dark-gray-1);
+  border-radius: 10px;
+  font: var(--input);
+  outline: none;
+
+  &:focus-visible {
+    border: 1px solid var(--blue);
+  }
+}
+
+.error {
+  font: var(--input);
+}
+
+.errorColor {
+  color: var(--red);
+}
+
+.input.errorBorder {
+  border: 1px solid var(--red);
+}
