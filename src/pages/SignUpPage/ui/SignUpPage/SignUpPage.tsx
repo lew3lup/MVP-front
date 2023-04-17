@@ -21,7 +21,6 @@ const SignUpPage = (props: SignUpPageProps) => {
   const signUpWithGoogle = async () => {
     console.log("clicked");
     await dispatch(loginByGoogle());
-    console.log("OK");
   };
 
   return (
@@ -41,7 +40,7 @@ const SignUpPage = (props: SignUpPageProps) => {
           </TextInput>
         </Link>
         <div className={styles.divider}></div>
-        <TextInput onClick={signUpWithGoogle}>
+        <TextInput className={styles.textInput} onClick={signUpWithGoogle}>
           <Icon Svg={GoogleIcon} />
           <div className={styles.textWrapper}>
             <p className={styles.option}>Sign up with Google</p>

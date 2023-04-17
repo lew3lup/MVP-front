@@ -1,12 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "app/providers/store/config/StateSchema";
 import { GoogleAuthData } from "entities/User";
-import { ACCESS_TOKEN_KEY } from "shared/const/AccessTokenKey";
 
 export const loginByGoogle = createAsyncThunk<GoogleAuthData, void, ThunkConfig<string>>(
   "auth/authByGoogle",
   async (_, thunkApi) => {
-    const { dispatch, rejectWithValue, extra } = thunkApi;
+    const { rejectWithValue, extra } = thunkApi;
 
     try {
       const response = await extra.api.get<GoogleAuthData>("/get-google-login-url");
@@ -15,9 +14,11 @@ export const loginByGoogle = createAsyncThunk<GoogleAuthData, void, ThunkConfig<
         throw new Error("Request is incorrect");
       }
 
-      extra?.navigate?.(response.data.link);
+      // extra?.navigate?.(response.data.link);
+      // redirect(response.data.link);
 
-      // localStorage.setItem(ACCESS_TOKEN_KEY, JSON.stringify(response.data.link));
+      // Пока так.
+      open(response.data.link, "googleAuth", "");
 
       return response.data;
     } catch (e: any) {

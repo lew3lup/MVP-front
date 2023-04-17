@@ -4,6 +4,7 @@ import { GoogleAuthSchema } from "../types/GoogleAuthSchema";
 
 const initialState: GoogleAuthSchema = {
   isLoading: false,
+  error: undefined,
 };
 
 export const GoogleAuthSlice = createSlice({
