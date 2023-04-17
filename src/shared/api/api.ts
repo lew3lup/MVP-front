@@ -3,7 +3,7 @@ import { ACCESS_TOKEN_KEY } from "shared/const/AccessTokenKey";
 
 const $api = axios.create({
   baseURL: __API__,
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 $api.interceptors.request.use((config) => {
