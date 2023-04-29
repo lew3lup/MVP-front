@@ -19,7 +19,6 @@ const SignUpPage = (props: SignUpPageProps) => {
   const dispatch = useAppDispatch();
 
   const signUpWithGoogle = async () => {
-    console.log("clicked");
     await dispatch(loginByGoogle());
   };
 

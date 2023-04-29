@@ -1,3 +1,4 @@
 export { loginByGoogle } from "./model/services/loginByGoogle";
-export { googleAuthActions, googleAuthReducer } from "./model/slice/GoogleAuthSlice";
-export { GoogleAuthSchema } from "./model/types/GoogleAuthSchema";
+export { loginByMetamask } from "./model/services/loginByMetamask";
+export { authActions, authReducer } from "./model/slice/AuthSlice";
+export { AuthSchema } from "./model/types/AuthSchema";

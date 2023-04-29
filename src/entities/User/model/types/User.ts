@@ -1,10 +1,10 @@
-export interface GoogleAuthData {
-  type: string;
-  link: string;
-}
+import { User } from "shared/api/types";
 
 export interface UserSchema {
-  authData?: GoogleAuthData;
+  isLoading?: boolean;
+  error?: string;
 
+  token?: string;
   _inited?: boolean;
+  user?: User;
 }

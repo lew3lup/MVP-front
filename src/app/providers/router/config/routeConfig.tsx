@@ -1,3 +1,4 @@
+import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { SignInPage } from "pages/SignInPage";
 import {
@@ -15,6 +16,7 @@ export type AppRouteProps = RouteProps & {
 };
 
 export enum AppRoutes {
+  MAIN_PAGE = "main_page",
   SIGN_UP = "sign_up",
   SIGN_IN = "sign_in",
   METAMASK = "metamask",
@@ -26,6 +28,7 @@ export enum AppRoutes {
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
+  [AppRoutes.MAIN_PAGE]: "/",
   [AppRoutes.SIGN_IN]: "/sign-in",
   [AppRoutes.SIGN_UP]: "/sign-up",
   [AppRoutes.METAMASK]: "/metamask",
@@ -37,6 +40,10 @@ export const RoutePath: Record<AppRoutes, string> = {
 };
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
+  [AppRoutes.MAIN_PAGE]: {
+    path: RoutePath.main_page,
+    element: <MainPage />,
+  },
   [AppRoutes.SIGN_UP]: {
     path: RoutePath.sign_up,
     element: <SignUpPage />,

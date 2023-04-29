@@ -10,7 +10,7 @@ const EmailPage = (props: EmailPageProps) => {
 
   return (
     <div className={cn(styles.root, className, {})}>
-      EmailPage
+      Temporarily unavailable
     </div>
   );
 };

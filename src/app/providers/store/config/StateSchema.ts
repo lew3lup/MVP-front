@@ -7,10 +7,12 @@ import {
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { UserSchema } from "entities/User";
+import { AuthSchema } from "features/AuthByGoogle";
 import { NavigateOptions, To } from "react-router-dom";
 
 export interface StateSchema {
   user: UserSchema;
+  authData?: AuthSchema;
   test?: any;
 }
 

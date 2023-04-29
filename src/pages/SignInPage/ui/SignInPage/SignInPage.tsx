@@ -6,6 +6,8 @@ import MetamaskIcon from "shared/assets/icons/metamask-icon.svg";
 import Logo from "shared/assets/logo.svg";
 import { Card, Icon, TextInput } from "shared/ui";
 import styles from "./SignInPage.module.scss";
+import { loginByGoogle } from "features/AuthByGoogle";
+import { useAppDispatch } from "shared/hooks";
 
 export interface SignInPageProps {
   className?: string;
@@ -13,6 +15,11 @@ export interface SignInPageProps {
 
 const SignInPage = (props: SignInPageProps) => {
   const { className } = props;
+  const dispatch = useAppDispatch();
+
+  const signUpWithGoogle = async () => {
+    await dispatch(loginByGoogle());
+  };
 
   return (
     <div className={cn(styles.root, className, {})}>
@@ -28,14 +35,12 @@ const SignInPage = (props: SignInPageProps) => {
             </div>
           </TextInput>
         </Link>
-        <Link className={styles.textInput} to={RoutePath[AppRoutes.GOOGLE]}>
-          <TextInput>
-            <Icon Svg={GoogleIcon} />
-            <div className={styles.textWrapper}>
-              <p className={styles.option}>Sign up with Google</p>
-            </div>
-          </TextInput>
-        </Link>
+        <TextInput className={styles.textInput} onClick={signUpWithGoogle}>
+          <Icon Svg={GoogleIcon} />
+          <div className={styles.textWrapper}>
+            <p className={styles.option}>Sign up with Google</p>
+          </div>
+        </TextInput>
         <div className={styles.divider}></div>
         <p className={styles.signInP}>
           Dont have an account?{" "}

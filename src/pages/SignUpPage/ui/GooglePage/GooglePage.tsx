@@ -3,6 +3,8 @@ import styles from "./GooglePage.module.scss";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ACCESS_TOKEN_KEY } from "shared/const/AccessTokenKey";
 import { useEffect } from "react";
+import { useAppDispatch } from "shared/hooks";
+import { userActions } from "entities/User";
 
 export interface GooglePageProps {
   className?: string;
@@ -13,10 +15,13 @@ const GooglePage = (props: GooglePageProps) => {
   const { className } = props;
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (searchParams.get("token")) {
-      localStorage.setItem(ACCESS_TOKEN_KEY, JSON.stringify(searchParams.get("token")));
+    const token = searchParams.get("token");
+    if (token) {
+      localStorage.setItem(ACCESS_TOKEN_KEY, token);
+      dispatch(userActions.setGoogleAuthData(token));
       navigate("/");
     }
   }, [searchParams]);
