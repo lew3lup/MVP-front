@@ -22,7 +22,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(fetchUserData());
     dispatch(userActions.initAuthData());
-  }, []);
+  }, [dispatch, userActions]);
 
   return (
     <div className={cn("app", {}, [])}>

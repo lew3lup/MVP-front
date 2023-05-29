@@ -6,7 +6,7 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "shared/hooks";
-import { Button, Checkbox } from "shared/ui";
+import { Button, Checkbox, Loader } from "shared/ui";
 import styles from "./MainPage.module.scss";
 
 export interface MainPageProps {
@@ -27,7 +27,9 @@ const MainPage = (props: MainPageProps) => {
     dispatch(verifyByFractal());
   }, [dispatch]);
 
-  return (
+  console.log(_inited);
+
+  return _inited ? (
     <div className={cn(styles.root, className, {})}>
       <p>Welcome, {user?.name || "guest"}</p>
       {user?.isVerified && <p>Верифицирован</p>}
@@ -43,6 +45,10 @@ const MainPage = (props: MainPageProps) => {
         <Checkbox label="some label" checked />
         <Checkbox label="another label" checked disabled />
       </div> */}
+    </div>
+  ) : (
+    <div className={cn(styles.root, className, {})}>
+      <Loader />
     </div>
   );
 };
