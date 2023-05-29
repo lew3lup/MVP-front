@@ -12,6 +12,10 @@ enum TypeOfResponse {
   ERROR = "error",
 }
 
+interface ApiError {
+  message: string;
+}
+
 export interface GoogleAuthData {
   type: TypeOfResponse;
   link: string;
@@ -30,14 +34,14 @@ export interface MetamaskLoginData {
 
 export interface SetUsernameData {
   type: string;
-  error?: { message: string };
+  error?: ApiError;
   user?: User;
 }
 
 export interface FetchUserData {
   type: TypeOfResponse;
   data?: User;
-  error?: { message: string };
+  error?: ApiError;
 }
 
 export interface BlockchainConfigData {
@@ -45,7 +49,19 @@ export interface BlockchainConfigData {
   data: Network[];
 }
 
-interface Network {
+export interface GetVerifiationInitData {
+  type: TypeOfResponse;
+  data?: string;
+  error?: ApiError;
+}
+
+export interface GetMintingSignatureData {
+  type: TypeOfResponse;
+  data?: string;
+  error?: ApiError;
+}
+
+export interface Network {
   chainId: number;
   name: string;
   contractAddress: string;

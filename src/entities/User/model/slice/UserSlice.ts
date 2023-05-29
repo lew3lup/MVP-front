@@ -29,10 +29,11 @@ export const UserSlice = createSlice({
       if (token) {
         state.token = token;
       }
-      state._inited = true;
     },
     logout: (state) => {
       state.token = undefined;
+      state.user = undefined;
+      state._inited = false;
       localStorage.removeItem(ACCESS_TOKEN_KEY);
     },
   },
@@ -57,10 +58,12 @@ export const UserSlice = createSlice({
       .addCase(fetchUserData.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoading = false;
+        state._inited = true;
       })
       .addCase(fetchUserData.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
+        state._inited = true;
       });
   },
 });

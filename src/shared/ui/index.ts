@@ -1,7 +1,9 @@
 export { Button } from "./Button/Button";
 export { Card } from "./Card/Card";
+export { Checkbox } from "./Checkbox/Checkbox";
 export { Icon } from "./Icon/Icon";
 export { Input } from "./Input/Input";
 export { Loader } from "./Loader/Loader";
 export { PageLoader } from "./PageLoader/PageLoader";
+export { Select } from "./Select/Select";
 export { TextInput } from "./TextInput/TextInput";

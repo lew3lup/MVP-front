@@ -6,6 +6,7 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
+import { BlockchainSchema } from "entities/Blockchain";
 import { UserSchema } from "entities/User";
 import { AuthSchema } from "features/AuthByGoogle";
 import { NavigateOptions, To } from "react-router-dom";
@@ -13,7 +14,7 @@ import { NavigateOptions, To } from "react-router-dom";
 export interface StateSchema {
   user: UserSchema;
   authData?: AuthSchema;
-  test?: any;
+  blockchain?: BlockchainSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

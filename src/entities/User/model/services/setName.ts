@@ -11,7 +11,7 @@ export const setName = createAsyncThunk<User, string, ThunkConfig<string>>(
       const response = await extra.api.post<SetUsernameData>(
         "user/set-username",
         { name: username },
-        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        { headers: { "Content-Type": "multipart/form-data" } }
       );
 
       if (!response.data) throw new Error("Request is incorrect");

@@ -10,7 +10,7 @@ import "./styles/index.scss";
 export const App = () => {
   const isMobile = useLayout();
   const dispatch = useAppDispatch();
-  
+
   useEffect(() => {
     if (isMobile) {
       document.body.className = "app-mobile";

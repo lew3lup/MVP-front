@@ -9,6 +9,7 @@ import {
   MetamaskUsernamePage,
   SignUpPage,
 } from "pages/SignUpPage";
+import { TokenIssuancePage } from "pages/TokenIssuancePage";
 import { RouteProps } from "react-router-dom";
 
 export type AppRouteProps = RouteProps & {
@@ -24,6 +25,7 @@ export enum AppRoutes {
   GOOGLE = "google",
   EMAIL = "email",
   CONFIRMATION = "confirmation",
+  TOKEN_ISSUANCE = "token_issuance",
   NOT_FOUND = "not_found",
 }
 
@@ -36,6 +38,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.GOOGLE]: "/google",
   [AppRoutes.EMAIL]: "/email",
   [AppRoutes.CONFIRMATION]: "/confirmation",
+  [AppRoutes.TOKEN_ISSUANCE]: "/token-issuance",
   [AppRoutes.NOT_FOUND]: "*",
 };
 
@@ -71,6 +74,10 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.CONFIRMATION]: {
     path: RoutePath.confirmation,
     element: <ConfirmationPage />,
+  },
+  [AppRoutes.TOKEN_ISSUANCE]: {
+    path: RoutePath.token_issuance,
+    element: <TokenIssuancePage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,

@@ -41,7 +41,7 @@ export const loginByMetamask = createAsyncThunk<MetamaskLoginData, string, Thunk
           },
           {
             headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
+              "Content-Type": "multipart/form-data",
             },
           }
         );

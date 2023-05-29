@@ -1,8 +1,11 @@
 import cn from "classnames";
+import { DetailedHTMLProps, InputHTMLAttributes, memo, useState } from "react";
 import styles from "./Input.module.scss";
-import { InputHTMLAttributes, memo, useState } from "react";
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
+type HTMLInputProps = Omit<
+  DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+  "value" | "onChange"
+>;
 
 export interface InputProps extends HTMLInputProps {
   className?: string;

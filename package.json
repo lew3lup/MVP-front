@@ -2,7 +2,7 @@
   "name": "levelup-client",
   "version": "1.0.0",
   "description": "SPA for levelup platform",
-  "author": "Tripod ind.tripod@gmail.com",
+  "author": "variasco vakin213@gmail.com",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --env port=3000",

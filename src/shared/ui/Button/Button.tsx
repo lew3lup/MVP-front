@@ -1,8 +1,9 @@
 import cn from "classnames";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import styles from "./Button.module.scss";
-import { ButtonHTMLAttributes, HTMLAttributes } from "react";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   className?: string;
   width?: string | number;
 }

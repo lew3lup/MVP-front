@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { loginByGoogle } from "../services/loginByGoogle";
 import { AuthSchema } from "../types/AuthSchema";
 import { loginByMetamask } from "../services/loginByMetamask";
+import { verifyByFractal } from "../services/verifyByFractal";
 
 const initialState: AuthSchema = {
   token: null,
@@ -35,6 +36,17 @@ export const AuthSlice = createSlice({
         state.token = action.payload.token;
       })
       .addCase(loginByMetamask.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(verifyByFractal.pending, (state) => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(verifyByFractal.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(verifyByFractal.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });
